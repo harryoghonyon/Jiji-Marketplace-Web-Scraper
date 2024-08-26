@@ -1,4 +1,4 @@
-import csv
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -75,15 +75,15 @@ def search(query):
 
         # Extract the product details
         product_name = driver.find_element(
-            By.CSS_SELECTOR, "b-advert-title-inner.qa-advert-title.b-advert-title-inner--h1").text
+            By.CLASS_NAME, "qa-advert-title").text
         product_price = driver.find_element(
-            By.CSS_SELECTOR, "qa-advert-price-view-title.b-alt-advert-price__text").text
+            By.CLASS_NAME, "qa-advert-price-view-title").text
         seller_name = driver.find_element(
-            By.CSS_SELECTOR, "b-seller-block__name").text
+            By.CLASS_NAME, "b-seller-block__name").text
 
         # Extract all phone numbers
         phone_elements = driver.find_elements(
-            By.CSS_SELECTOR, "b-show-contacts-popover-item__phone.h-flex-1-0.h-mr-15")
+            By.CLASS_NAME, "b-show-contacts-popover-item__phone")
         phone_numbers = [phone.text for phone in phone_elements]
         print(f"Phone Numbers: {phone_numbers}")
 
