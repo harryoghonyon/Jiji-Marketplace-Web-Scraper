@@ -1,4 +1,4 @@
-# Jiji Crawler
+# Jiji Marketplace Web Scraper
 
 A Python-based web scraping tool for extracting product listings and seller contact information from Jiji.ng, including handling authenticated sessions and dynamic content. The crawler collects structured marketplace data and saves it for further analysis or automation.
 
